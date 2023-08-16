@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Games For You</string>
+    <string name="error_occurred">Error occurred</string>
+    <string name="search">Search</string>
+    <string name="home">Home</string>
+    <string name="favorite">Favorite</string>
+    <string name="release_date">Release date %1$s</string>
+    <string name="played_count">%1$d played</string>
+    <string name="add_favorite">Add favorite</string>
+    <string name="remove_favorite">Remove favorite</string>
+    <string name="detail">Detail</string>
+    <string name="no_items_found">No items found</string>
+    <string name="no_items_in_favorite">No items in favorite</string>
+</resources>

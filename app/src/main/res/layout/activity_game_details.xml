@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.GameDetailsActivity">
+
+    <data>
+        <variable
+            name="vm"
+            type="co.mbznetwork.gamesforyou.viewmodel.DetailViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_game_image"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                tools:src="@tools:sample/backgrounds/scenic"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintDimensionRatio="H,16:9"
+                android:scaleType="centerCrop"
+                imageUrl="@{vm.game.image}"/>
+
+            <TextView
+                android:id="@+id/tv_publisher"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="Rockstar Games"
+                app:layout_constraintTop_toBottomOf="@id/iv_game_image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="16dp"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@{vm.game.publisher}"/>
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="Lorem ipsum dolor sit amet amet amet amet amet"
+                app:layout_constraintTop_toBottomOf="@id/tv_publisher"
+                app:layout_constraintStart_toStartOf="@id/tv_publisher"
+                app:layout_constraintEnd_toEndOf="@id/tv_publisher"
+                android:layout_marginTop="8dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="@{vm.game.name}"/>
+
+            <TextView
+                android:id="@+id/tv_release_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="Release date 2021-08-20"
+                app:layout_constraintTop_toBottomOf="@id/tv_name"
+                app:layout_constraintStart_toStartOf="@id/tv_publisher"
+                app:layout_constraintEnd_toEndOf="@id/tv_publisher"
+                android:layout_marginTop="4dp"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@{@string/release_date(vm.game.releaseDate)}"/>
+
+            <TextView
+                android:id="@+id/tv_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="4.5"
+                app:layout_constraintTop_toBottomOf="@id/tv_release_date"
+                app:layout_constraintStart_toStartOf="@id/tv_publisher"
+                android:layout_marginTop="4dp"
+                android:gravity="center_vertical"
+                android:drawablePadding="8dp"
+                app:drawableStartCompat="@drawable/ic_star"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@{vm.game.rating}"/>
+
+            <TextView
+                android:id="@+id/tv_played"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="200 played"
+                app:layout_constraintTop_toTopOf="@id/tv_rating"
+                app:layout_constraintStart_toEndOf="@id/tv_rating"
+                android:gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:drawablePadding="8dp"
+                app:drawableStartCompat="@drawable/ic_game"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@{@string/played_count(vm.game.played)}"/>
+
+            <TextView
+                android:id="@+id/tv_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet"
+                app:layout_constraintTop_toBottomOf="@id/tv_rating"
+                app:layout_constraintStart_toStartOf="@id/tv_publisher"
+                app:layout_constraintEnd_toEndOf="@id/tv_publisher"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginVertical="26dp"
+                android:textColor="@color/black"
+                htmlText="@{vm.game.description}"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>
