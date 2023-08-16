@@ -16,6 +16,14 @@ Techs:
 - GoogleMaps
 - Mockito
 
+## Features
+
+- Get the list of available games
+- Search games
+- View the game details
+- Add a game to favorite
+- Remove a game from favorite
+
 ## Run App
 
 1. Open the project in Android Studio
@@ -33,7 +41,8 @@ You can perform unit test directly from Android Studio. Or you can run this comm
 
 ## Instrumentation Testing
 
-You can perform instrumented test directly from Android Studio. Or you can run this command to test all instrumented testing
+Android device connection is needed for this test. You can perform instrumented test directly from Android Studio. 
+Or you can run this command to test all instrumented testing
 
 ```
 ./gradlew connectedAndroidTest
